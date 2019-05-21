@@ -1,6 +1,6 @@
 {
   "name": "travis-deploy-test-extension",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "TravisCIを使って自動デプロイしたいなというテストリポジトリ",
   "author": "mnao305 <naomasa305@gmail.com>",
   "scripts": {
@@ -12,7 +12,7 @@
     "build-zip": "node scripts/build-zip.js",
     "watch": "npm run build -- --watch",
     "watch:dev": "cross-env HMR=true npm run build:dev -- --watch",
-    "release": "cd dist-zip && webstore upload --source *.zip --auto-publish"
+    "release": "cd dist && webstore upload --auto-publish && web-ext-submit"
   },
   "dependencies": {
     "axios": "^0.18.0",
