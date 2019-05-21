@@ -13,7 +13,8 @@
     "watch": "npm run build -- --watch",
     "watch:dev": "cross-env HMR=true npm run build:dev -- --watch",
     "releaseCWS": "cd dist && webstore upload --auto-publish",
-    "releaseAMO": "cd dist && web-ext-submit"
+    "releaseAMO": "cd dist && web-ext-submit",
+    "release": "npm run releaseCWS && npm run releaseAMO"
   },
   "dependencies": {
     "axios": "^0.18.0",
