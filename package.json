@@ -1,6 +1,6 @@
 {
   "name": "travis-deploy-test-extension",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "TravisCIを使って自動デプロイしたいなというテストリポジトリ",
   "author": "mnao305 <naomasa305@gmail.com>",
   "scripts": {
