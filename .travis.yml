@@ -12,7 +12,9 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: npm run release
+  script:
+    - npm run releaseCWS
+    - npm run releaseAMO
   on:
     branch: master
     tags: true
