@@ -53,6 +53,7 @@
     "sass-loader": "^7.1.0",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.6.10",
+    "web-ext-submit": "^3.0.0",
     "web-ext-types": "^2.1.0",
     "webpack": "^4.20.2",
     "webpack-chrome-extension-reloader": "^0.8.3",
