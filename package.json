@@ -1,6 +1,6 @@
 {
   "name": "travis-deploy-test-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TravisCIを使って自動デプロイしたいなというテストリポジトリ",
   "author": "mnao305 <naomasa305@gmail.com>",
   "scripts": {
@@ -11,7 +11,8 @@
     "build:dev": "cross-env NODE_ENV=development webpack --hide-modules",
     "build-zip": "node scripts/build-zip.js",
     "watch": "npm run build -- --watch",
-    "watch:dev": "cross-env HMR=true npm run build:dev -- --watch"
+    "watch:dev": "cross-env HMR=true npm run build:dev -- --watch",
+    "release": "cd dist-zip && webstore upload --auto-publish"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -28,6 +29,7 @@
     "archiver": "^3.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.2",
+    "chrome-webstore-upload-cli": "^1.2.0",
     "copy-webpack-plugin": "^4.5.3",
     "core-js": "^3.0.1",
     "cross-env": "^5.2.0",
