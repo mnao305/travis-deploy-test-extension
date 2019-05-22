@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-  - "8"
-
+- '8'
 install:
 - npm install
 script:
@@ -10,9 +9,17 @@ script:
 - npm run build-zip
 
 deploy:
-  provider: script
-  skip_cleanup: true
-  script: npm run release
-  on:
-    branch: master
-    tags: true
+  - provider: script
+    skip_cleanup: true
+    script: npm run release
+    on:
+      branch: master
+      tags: true
+  - provider: releases
+    api_key:
+      secure: VDDraIvJJQOuE34RlsRsILauQnDRXdLPScTydm1Iq25abj7FxJUQ8p+miIDc9yPlhtsTN5PNTK2ePKJc8tarDvE9TRdF0GWFVloV8qH4+NUxtcE1WRSNhPQIvRU1xQRhpX52GYel2V7FtHFiFdTTM7s3DGDw6wsZZ/OmBjER5LTGdPLHfNjA6g9cOSnFkZZItBOP0LkHwK4oMJMgsSe0F41XfZkJX+bhxNflUhAnQxtNZrN9Dldp5exkMkeH/iHcZg+qQ+Mgr/En04HXqI795PruPcZfbGz+RkdtTFgx7nVise+qtPPc8f82K72Fcx6oNxlcJ0gKufY1f1Y47fAsa5BXL8f7gBDt5rJyI+DN/mNLVUDYO16/ETsLKv3YW5GA5ZCDYBF7o68lt8XiCL/Jm8uMC6YHZkdKlVthVCSI0aoWS2xHO98Z8P6dzQ5hWx6UheY9LbO6t1WDsJ0vlpR+HWTT1xGKDP8dzkHGJyTrAM6wrJwuLnsvgkdcY2HBc4F+saza3r2wcITiOW332msUKTwETzswVY2sWBa0xt8X2od4qfdh3OnoJRW4YjEIQ7oesVVKPPYPpKQCakjJYlx+Qa/QE5TPPi4phEcOmQ3gdV75BlitHqd7vJHH5sZ1wvcyrW0UOBUZ53tCS5p6zArQ3YFSbvLbtxUTN7531hRieh4=
+    file: dist-zip/*.zip
+    on:
+      repo: mnao305/travis-deploy-test-extension
+      branch: master
+      tags: true
